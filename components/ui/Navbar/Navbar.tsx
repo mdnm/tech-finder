@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { createServerSupabaseClient } from '@/app/supabase-server';
+import Link from 'next/link';
 
 import Logo from '@/components/icons/Logo';
 import SignOutButton from './SignOutButton';
@@ -28,9 +28,14 @@ export default async function Navbar() {
                 Pricing
               </Link>
               {user && (
-                <Link href="/account" className={s.link}>
-                  Account
-                </Link>
+                <>
+                  <Link href="/app" className={s.link}>
+                    App
+                  </Link>
+                  <Link href="/account" className={s.link}>
+                    Account
+                  </Link>
+                </>
               )}
             </nav>
           </div>

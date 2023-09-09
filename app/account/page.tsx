@@ -1,8 +1,7 @@
-import ManageSubscriptionButton from './ManageSubscriptionButton';
 import {
   getSession,
-  getUserDetails,
-  getSubscription
+  getSubscription,
+  getUserDetails
 } from '@/app/supabase-server';
 import Button from '@/components/ui/Button';
 import { Database } from '@/types_db';
@@ -12,6 +11,7 @@ import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { ReactNode } from 'react';
+import ManageSubscriptionButton from './ManageSubscriptionButton';
 
 export default async function Account() {
   const [session, userDetails, subscription] = await Promise.all([
@@ -83,7 +83,12 @@ export default async function Account() {
               ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
               : 'You are not currently subscribed to any plan.'
           }
-          footer={<ManageSubscriptionButton session={session} />}
+          footer={
+            <ManageSubscriptionButton
+              session={session}
+              disabled={!subscription}
+            />
+          }
         >
           <div className="mt-8 mb-4 text-xl font-semibold">
             {subscription ? (

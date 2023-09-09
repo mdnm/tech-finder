@@ -1,12 +1,12 @@
-import SupabaseProvider from './supabase-provider';
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
 import { PropsWithChildren } from 'react';
 import 'styles/main.css';
+import SupabaseProvider from './supabase-provider';
 
 const meta = {
-  title: 'Next.js Subscription Starter',
-  description: 'Brought to you by Vercel, Stripe, and Supabase.',
+  title: 'Tech Finder',
+  description: 'Find Tech Hiring Managers Flawlessly.',
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@vercel',
+    site: '@techfinder',
     title: meta.title,
     description: meta.description,
     cardImage: meta.cardImage

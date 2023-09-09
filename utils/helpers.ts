@@ -39,6 +39,53 @@ export const postData = async ({
   return res.json();
 };
 
+interface Lead {
+  id: number;
+  jobOffer: {
+    id: number;
+    title: string;
+    description: string;
+    location: string;
+    url: string;
+    timeSincePublished: string;
+    experienceLevel:
+      | 'Internship'
+      | 'Associate'
+      | 'EntryLevel'
+      | 'MidSeniorLevel'
+      | 'Director'
+      | 'Executive';
+    Company: {
+      id: number;
+      name: string;
+      website: string;
+      staffCount: number;
+    };
+  };
+  hiringManager: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    jobTitle: string;
+    emailStatus: string;
+    linkedInUrl: string;
+    location: string;
+  };
+}
+
+export const getLeads = async () => {
+  try {
+    const res = await fetch(
+      `https://hiring-manager-finder.onrender.com/api/leads`
+    );
+    const json = await res.json();
+    return json?.leads as Lead[];
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
 export const toDateTime = (secs: number) => {
   var t = new Date('1970-01-01T00:30:00Z'); // Unix epoch start.
   t.setSeconds(secs);
