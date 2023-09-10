@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="mr-2 border rounded-full border-zinc-700">
               <Logo />
             </span>
-            <span>TechFinder</span>
+            <span>FinderAI</span>
           </Link>
         </div>
         <div className="col-span-1 lg:col-span-2">
@@ -66,7 +66,7 @@ export default function Footer() {
       <div className="flex flex-col items-center justify-start py-12 space-y-4 md:flex-row bg-zinc-900">
         <div>
           <span>
-            &copy; {new Date().getFullYear()} Tech Finder, Inc. All rights
+            &copy; {new Date().getFullYear()} FinderAI, Inc. All rights
             reserved.
           </span>
         </div>

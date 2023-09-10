@@ -5,7 +5,7 @@ import 'styles/main.css';
 import SupabaseProvider from './supabase-provider';
 
 const meta = {
-  title: 'Tech Finder',
+  title: 'FinderAI',
   description: 'Find Tech Hiring Managers Flawlessly.',
   cardImage: '/og.png',
   robots: 'follow, index',
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@techfinder',
+    site: '@finderai',
     title: meta.title,
     description: meta.description,
     cardImage: meta.cardImage
